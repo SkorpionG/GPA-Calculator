@@ -1,0 +1,402 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.btn {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  margin: 1rem 0.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+body {
+  background-color: #272727;
+  color: white;
+  font-family: "Baloo 2", cursive;
+
+  section.animation-wrapper {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+
+    section.animation {
+      margin-top: 10vh;
+      height: 80vh;
+      // border: 5px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .hero {
+        // border: 5px solid green;
+        width: 100%;
+        height: 0;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(to right, rgb(144, 144, 144), rgb(0, 0, 0));
+      z-index: -1;
+    }
+  }
+
+  header {
+    nav {
+      box-shadow: 0 8px 6px -6px black;
+      ul {
+        display: flex;
+        li {
+          padding: 1rem;
+          a {
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            &:hover {
+              color: yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    section.main-content {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1.15rem;
+      }
+
+      div.grade-inputs {
+        form {
+          input,
+          select {
+            font-size: 1.05rem;
+            padding: 0.5rem;
+            border: 0.25px solid rgb(39, 39, 21);
+            margin: 0.35rem;
+            border-radius: 0.25rem;
+            text-align: center;
+          }
+
+          input.class-credit {
+            width: 80px;
+          }
+
+          button {
+            padding: 0.5rem;
+            border: none;
+            cursor: pointer;
+            background-color: #272727;
+            i {
+              font-size: 1.25rem;
+              pointer-events: none;
+              color: white;
+            }
+          }
+        }
+      }
+
+      button.add-button {
+        border: none;
+        cursor: pointer;
+        width: 2.5rem;
+        margin: 3rem 0rem;
+        background-color: #272727;
+        i {
+          font-size: 2.5rem;
+          pointer-events: none;
+          color: white;
+        }
+      }
+
+      div.calculation-result {
+        width: 200px;
+        height: 200px;
+        border: 3px solid red;
+        border-radius: 50%;
+        text-align: center;
+
+        animation-name: rainbow-border;
+        animation-duration: 20s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+
+        p#gpa-text {
+          margin-top: 32px;
+        }
+        h2#result-gpa {
+          font-size: 3.5rem;
+          font-weight: bold;
+        }
+      }
+
+      .toggle-switch {
+        $switchWidth: 30px;
+        $switchHeight: 17px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1; /* Ensures the toggle is on top of other elements */
+
+        /* Style for the toggle label */
+        .toggle-label {
+          opacity: 0;
+          pointer-events: none;
+          font-size: 16px;
+          color: white;
+          user-select: none; /* Prevents text selection on double-click */
+        }
+
+        /* Hide the default checkbox */
+        & input[type="checkbox"] {
+          display: none;
+        }
+
+        /* The switch - slider */
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: $switchWidth;
+          height: $switchHeight;
+          background-color: #ccc;
+          border-radius: 34px;
+          cursor: pointer;
+          transition: background-color 0.4s;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+          &::before {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+          }
+
+          /* The circle inside the switch */
+          &::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            width: 13px;
+            height: 13px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.4s;
+          }
+        }
+
+        /* Toggle on state */
+        & input[type="checkbox"]:checked + .switch {
+          background-color: #4caf50;
+        }
+
+        /* Move the circle when toggled on */
+        & input[type="checkbox"]:checked + .switch::before {
+          transform: translateX(13px);
+        }
+      }
+    }
+  }
+}
+
+.remove {
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-down {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+@keyframes rainbow-border {
+  0% {
+    border-color: red;
+  }
+
+  5% {
+    border-color: orangered;
+  }
+
+  10% {
+    border-color: tomato;
+  }
+
+  15% {
+    border-color: darkorange;
+  }
+
+  20% {
+    border-color: orange;
+  }
+
+  25% {
+    border-color: goldenrod;
+  }
+
+  30% {
+    border-color: gold;
+  }
+
+  35% {
+    border-color: yellow;
+  }
+
+  40% {
+    border-color: yellowgreen;
+  }
+
+  45% {
+    border-color: lawngreen;
+  }
+
+  50% {
+    border-color: chartreuse;
+  }
+
+  55% {
+    border-color: lime;
+  }
+
+  60% {
+    border-color: limegreen;
+  }
+
+  65% {
+    border-color: aqua;
+  }
+
+  70% {
+    border-color: deepskyblue;
+  }
+
+  75% {
+    border-color: dodgerblue;
+  }
+
+  80% {
+    border-color: blue;
+  }
+
+  85% {
+    border-color: blueviolet;
+  }
+
+  90% {
+    border-color: mediumorchid;
+  }
+
+  95% {
+    border-color: orchid;
+  }
+
+  100% {
+    border-color: violet;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  body {
+    header {
+      nav {
+        ul {
+          flex-direction: column;
+          align-items: center;
+
+          li {
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+
+    main {
+      section.main-content {
+        div.sort-buttons {
+          display: flex;
+          //   flex-direction: column;
+          //   align-items: center;
+          gap: 1rem;
+          margin: 0.5rem;
+
+          .btn {
+            margin: 0;
+          }
+        }
+
+        div.grade-inputs {
+          form {
+            div.subject-grade {
+              display: grid;
+              align-items: center;
+              grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+
+              input.class-type {
+              }
+
+              input.class-number {
+              }
+
+              input.class-credit {
+                width: unset;
+              }
+
+              input.letter-grade {
+                background-color: white;
+                color: black;
+              }
+
+              button.delete-button {
+                grid-column: 1 / 3;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
