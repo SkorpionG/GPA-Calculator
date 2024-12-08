@@ -4,7 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>成績計算網站</title>
+        <meta name="author" content="SkorpionG">
+        <meta name="description" content="A simple website for calculate GPA scores.">
+        <meta name="keywords" content="GPA, Calculator, Grades, Education">
+        <title id="website-title">成績計算網站</title>
+        <link rel="icon" type="image/svg+xml" href="./assets/icons/mortarboard.svg">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
             integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,14 +17,19 @@
         <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./styles/style.css">
         <link rel="stylesheet" href="./styles/grades.css">
-        <script src="./data.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+            integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+            integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
 
     <body>
         <section class="animation-wrapper">
             <section class="animation">
                 <div class="hero">
-                    <img src="./math.jpg" alt="math image" />
+                    <img src="./assets/images/math.jpg" alt="opening animation image" />
                 </div>
             </section>
             <div class="slider">
@@ -31,55 +40,64 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Grade Analysis</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a id="home-link" href="#">Home</a></li>
+                    <li><a id="grade-analysis-link" href="#">Grade Analysis</a></li>
+                    <li><a id="terms-of-service-link" href="#">Terms of Service</a></li>
+                    <li><a id="about-link" href="#">About</a></li>
+                    <li class="language-selector">
+                        <select id="language-select" title="Change Language">
+                            <option value="zh-tw">繁體中文</option>
+                            <option value="en">English</option>
+                        </select>
+                    </li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <section class="main-content">
-                <h1>Grade Input Form</h1>
+                <h1 id="main-heading">Grade Input Form</h1>
                 <div class="sort-buttons">
-                    <button class="btn sort-descending">降序排序</button>
-                    <button class="btn sort-ascending">升序排序</button>
+                    <button type="button" class="btn sort-descending"><img alt="sort icon" class="btn-icon"
+                            src="./assets/icons/sort-up.svg" /><span id="sort-button-desc-text">降序排序</span></button>
+                    <button type="button" class="btn sort-ascending"><img alt="sort icon" class="btn-icon"
+                            src="./assets/icons/sort-down.svg" /><span
+                            id="sort-button-asc-text">升序排序</span></button>
                 </div>
 
-                <div class="grade-inputs">
-                    <form>
-                        <div class="subject-grade">
-                            <input type="text" placeholder="Class Category" class="class-type" list="class-options" />
+                <div class="subject-container">
+                    <!-- subject entry template -->
+                    <div class="subject-entry-template">
+                        <input type="text" placeholder="Class Category" class="class-type" list="class-options" />
 
-                            <input type="text" placeholder="Class Number" class="class-number" />
+                        <input type="number" placeholder="Class Number" class="class-number" />
 
-                            <input type="number" placeholder="Credit" min="0" max="6" class="class-credit" />
+                        <input type="number" placeholder="Credit" min="0" max="6" class="class-credit" />
 
-                            <select title="Letter Grade" name="letter-grade" class="letter-grade">
-                                <option selected disabled value=""></option>
-                                <option value="A+">A+</option>
-                                <option value="A">A</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B">B</option>
-                                <option value="B-">B-</option>
-                                <option value="C+">C+</option>
-                                <option value="C">C</option>
-                                <option value="C-">C-</option>
-                                <option value="D+">D+</option>
-                                <option value="D">D</option>
-                                <option value="D-">D-</option>
-                                <option value="F">F</option>
-                            </select>
+                        <select title="Letter Grade" name="letter-grade" class="letter-grade">
+                            <option selected disabled value=""></option>
+                            <option value="A+">A+</option>
+                            <option value="A">A</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B">B</option>
+                            <option value="B-">B-</option>
+                            <option value="C+">C+</option>
+                            <option value="C">C</option>
+                            <option value="C-">C-</option>
+                            <option value="D+">D+</option>
+                            <option value="D">D</option>
+                            <option value="D-">D-</option>
+                            <option value="F">F</option>
+                        </select>
 
-                            <button title="Delete" class="delete-button" type="button">
-                                <i class="fas fa-trash"></i>
-                            </button>
-                        </div>
-                    </form>
+                        <button title="Delete" class="delete-button" type="button">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
                 </div>
 
-                <button title="Add" type="button" class="add-button">
+                <button title="Add" type="button" class="add-button" id="add-button">
                     <i class="fas fa-plus-square"></i>
                 </button>
 
@@ -90,9 +108,10 @@
 
                 <!-- Toggle Switch Container -->
                 <div class="toggle-switch">
-                    <span class="toggle-label"><span>Hide</span> opening animation</span>
-                    <input title="Toggle Opening Animation" type="checkbox" id="animationToggle" />
-                    <label for="animationToggle" class="switch"></label>
+                    <span class="toggle-label"><span id="toggle-label-status">Hide </span><span
+                            id="toggle-label-text">opening animation</span></span>
+                    <input title="Toggle Opening Animation" type="checkbox" id="animation-toggle" />
+                    <label for="animation-toggle" class="switch"></label>
                 </div>
 
                 <datalist id="class-options">
@@ -102,23 +121,8 @@
         </main>
     </body>
 
-    <script>
-        const subjectGrade = document.querySelector(".subject-grade");
-
-        const duplicate1 = subjectGrade.cloneNode(true);
-        const duplicate2 = subjectGrade.cloneNode(true);
-
-        subjectGrade.parentElement.appendChild(duplicate1);
-        subjectGrade.parentElement.appendChild(duplicate2);
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
-        integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
-        integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./script.js"></script>
-    <script src="./toggle.js"></script>
-    <script src="./app.js"></script>
+    <script src="./scripts/script.js" type="module" defer></script>
+    <script src="./scripts/animation-preference-toggle.js" type="module" defer></script>
+    <script src="./scripts/app.js" type="module" defer></script>
 
 </html>

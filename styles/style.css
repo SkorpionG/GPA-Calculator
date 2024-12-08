@@ -13,13 +13,32 @@ a {
   color: white;
 }
 
+button {
+  cursor: pointer;
+}
+button i {
+  color: white;
+  transition: all 0.3s ease;
+}
+button:hover i {
+  color: #ccc;
+}
+
 .btn {
   padding: 0.5rem 0.75rem;
   border: none;
   margin: 1rem 0.5rem;
+  transition: background-color 0.3s ease;
 }
 .btn:hover {
   cursor: pointer;
+  background-color: #ccc;
+}
+
+.subject-entry-template {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
 
 body {
@@ -60,11 +79,18 @@ body section.animation-wrapper .slider {
   background: linear-gradient(to right, rgb(144, 144, 144), rgb(0, 0, 0));
   z-index: -1;
 }
+body header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #272727;
+}
 body header nav {
   box-shadow: 0 8px 6px -6px black;
 }
 body header nav ul {
   display: flex;
+  align-items: center;
 }
 body header nav ul li {
   padding: 1rem;
@@ -75,6 +101,33 @@ body header nav ul li a {
 }
 body header nav ul li a:hover {
   color: yellow;
+}
+body header nav ul li.language-selector {
+  margin-left: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body header nav ul li.language-selector select {
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+body header nav ul li.language-selector select option {
+  background-color: #333;
+  color: white;
+}
+body header nav ul li.language-selector select:hover {
+  background-color: #444;
+  border-color: #555;
+}
+body header nav ul li.language-selector select:focus {
+  border-color: yellow;
+  box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.2);
 }
 body main section.main-content {
   padding: 1rem;
@@ -89,8 +142,38 @@ body main section.main-content h1 {
 body main section.main-content p {
   font-size: 1.15rem;
 }
-body main section.main-content div.grade-inputs form input,
-body main section.main-content div.grade-inputs form select {
+body main section.main-content div.sort-buttons .btn {
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+body main section.main-content div.sort-buttons .btn .btn-icon {
+  vertical-align: text-bottom;
+  margin-right: 0.25rem;
+  transform: scale(1.25);
+}
+body main section.main-content div.subject-container {
+  max-height: calc(var(--entry-height, 50px) * 3);
+  overflow-y: auto;
+}
+body main section.main-content div.subject-container::-webkit-scrollbar {
+  width: 8px;
+}
+body main section.main-content div.subject-container::-webkit-scrollbar-track {
+  background: #333;
+  border-radius: 4px;
+}
+body main section.main-content div.subject-container::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+body main section.main-content div.subject-container::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+body main section.main-content div.subject-container::-webkit-scrollbar-thumb:active {
+  background: #aaa;
+}
+body main section.main-content div.subject-container input,
+body main section.main-content div.subject-container select {
   font-size: 1.05rem;
   padding: 0.5rem;
   border: 0.25px solid rgb(39, 39, 21);
@@ -98,19 +181,17 @@ body main section.main-content div.grade-inputs form select {
   border-radius: 0.25rem;
   text-align: center;
 }
-body main section.main-content div.grade-inputs form input.class-credit {
+body main section.main-content div.subject-container input.class-credit {
   width: 80px;
 }
-body main section.main-content div.grade-inputs form button {
+body main section.main-content div.subject-container button {
   padding: 0.5rem;
   border: none;
-  cursor: pointer;
   background-color: #272727;
 }
-body main section.main-content div.grade-inputs form button i {
+body main section.main-content div.subject-container button i {
   font-size: 1.25rem;
   pointer-events: none;
-  color: white;
 }
 body main section.main-content button.add-button {
   border: none;
@@ -122,7 +203,6 @@ body main section.main-content button.add-button {
 body main section.main-content button.add-button i {
   font-size: 2.5rem;
   pointer-events: none;
-  color: white;
 }
 body main section.main-content div.calculation-result {
   width: 200px;
@@ -139,6 +219,7 @@ body main section.main-content div.calculation-result p#gpa-text {
   margin-top: 32px;
 }
 body main section.main-content div.calculation-result h2#result-gpa {
+  font-family: "Baloo 2", cursive;
   font-size: 3.5rem;
   font-weight: bold;
 }
@@ -150,6 +231,7 @@ body main section.main-content .toggle-switch {
   bottom: 20px;
   right: 20px;
   z-index: 1; /* Ensures the toggle is on top of other elements */
+  font-family: Arial, Helvetica, sans-serif;
   /* Style for the toggle label */
   /* Hide the default checkbox */
   /* The switch - slider */
@@ -162,8 +244,8 @@ body main section.main-content .toggle-switch .toggle-label {
   font-size: 16px;
   color: white;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none; /* Prevents text selection on double-click */
+  -moz-user-select: none;
+       user-select: none; /* Prevents text selection on double-click */
 }
 body main section.main-content .toggle-switch input[type=checkbox] {
   display: none;
@@ -291,31 +373,79 @@ body main section.main-content .toggle-switch input[type=checkbox]:checked + .sw
   body header nav ul {
     flex-direction: column;
     align-items: center;
+    padding: 1rem;
   }
   body header nav ul li {
     padding: 0.5rem;
   }
+  body header nav ul li.language-selector {
+    margin-left: unset;
+  }
+  body main section.main-content h1 {
+    margin-top: 1rem;
+  }
   body main section.main-content div.sort-buttons {
     display: flex;
+    justify-content: center;
     gap: 1rem;
-    margin: 0.5rem;
+    margin: 2rem auto;
   }
   body main section.main-content div.sort-buttons .btn {
     margin: 0;
   }
-  body main section.main-content div.grade-inputs form div.subject-grade {
+  body main section.main-content div.subject-container div.subject-entry {
     display: grid;
     align-items: center;
     grid-template: repeat(3, 1fr)/repeat(2, 1fr);
   }
-  body main section.main-content div.grade-inputs form div.subject-grade input.class-credit {
+  body main section.main-content div.subject-container div.subject-entry input.class-credit {
     width: unset;
   }
-  body main section.main-content div.grade-inputs form div.subject-grade input.letter-grade {
+  body main section.main-content div.subject-container div.subject-entry input.letter-grade {
     background-color: white;
     color: black;
   }
-  body main section.main-content div.grade-inputs form div.subject-grade button.delete-button {
+  body main section.main-content div.subject-container div.subject-entry button.delete-button {
     grid-column: 1/3;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  body main section.main-content button.add-button {
+    margin: 2rem auto;
+  }
+  body main section.main-content div.calculation-result {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  body main section.main-content {
+    display: block;
+  }
+  body main section.main-content div.subject-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: unset;
+    max-height: unset;
+  }
+  body main section.main-content div.subject-container div.subject-entry {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  body main section.main-content div.subject-container div.subject-entry input.letter-grade {
+    background-color: white;
+    color: black;
+  }
+  body main section.main-content div.subject-container div.subject-entry button.delete-button {
+    grid-column: 1/3;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  body main div.calculation-result {
+    margin: 0 auto 2rem;
   }
 }/*# sourceMappingURL=style.css.map */

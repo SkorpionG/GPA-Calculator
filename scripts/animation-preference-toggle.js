@@ -1,28 +1,37 @@
+import { runOpeningAnimation } from "./utils.js";
+import { toggleLabelStatus, loadLanguagePreference } from "./languages.js";
+
 // Select the toggle checkbox
-const toggleCheckbox = document.getElementById("animationToggle");
+const toggleCheckbox = document.getElementById("animation-toggle");
 const toggleLabel = document.querySelector(".toggle-label");
-const toggleLabelText = document.querySelector(".toggle-label span");
+const toggleLabelStatusText = document.getElementById(toggleLabelStatus.id);
 const toggleSwitch = document.querySelector(".switch");
+
+function displayToggleStatus() {
+  const languagePreference = loadLanguagePreference();
+
+  toggleLabelStatusText[toggleLabelStatus.target] = toggleCheckbox.checked
+    ? toggleLabelStatus.hideStatusText[languagePreference]
+    : toggleLabelStatus.showStatusText[languagePreference];
+}
 
 // Function to handle toggle changes
 const handleToggle = () => {
-  toggleLabelText.innerText = toggleCheckbox.checked ? "Hide" : "Show";
+  displayToggleStatus();
   if (toggleCheckbox.checked) {
     // Toggle is ON
     localStorage.setItem("showOpeningAnimation", "true");
-    console.log("Toggle is ON: showOpeningAnimation set to true");
   } else {
     // Toggle is OFF
     localStorage.removeItem("showOpeningAnimation");
-    console.log("Toggle is OFF: showOpeningAnimation removed");
   }
 };
 
 // Event listener for toggle changes
 toggleCheckbox.addEventListener("change", handleToggle);
 
-toggleSwitch.addEventListener("mouseover", function () {
-  toggleLabelText.innerText = toggleCheckbox.checked ? "Hide" : "Show";
+toggleSwitch.addEventListener("mouseover", () => {
+  displayToggleStatus();
   const timeLine = new TimelineMax();
   timeLine.fromTo(
     toggleLabel,
@@ -32,8 +41,8 @@ toggleSwitch.addEventListener("mouseover", function () {
   );
 });
 
-toggleSwitch.addEventListener("mouseout", function () {
-  toggleLabelText.innerText = toggleCheckbox.checked ? "Hide" : "Show";
+toggleSwitch.addEventListener("mouseout", () => {
+  displayToggleStatus();
   const timeLine = new TimelineMax();
   timeLine.fromTo(
     toggleLabel,

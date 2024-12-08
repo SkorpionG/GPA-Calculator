@@ -1,4 +1,4 @@
-const classes = [
+export const classes = [
   { value: "ACCT", option: "Accounting" },
   { value: "ASL", option: "American Sign Language" },
   { value: "ANTH", option: "Anthropology" },
