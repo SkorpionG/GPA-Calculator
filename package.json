@@ -1,0 +1,33 @@
+{
+    "name": "gpa-calculator",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint 'src/**/*.js' -c eslint.config.mjs",
+        "lint:fix": "eslint 'src/**/*.js' -c eslint.config.mjs --fix",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SkorpionG/GPA-Calculator.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/SkorpionG/GPA-Calculator/issues"
+    },
+    "homepage": "https://github.com/SkorpionG/GPA-Calculator#readme",
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "eslint": "^10.6.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.6",
+        "globals": "^17.7.0",
+        "prettier": "^3.9.0"
+    }
+}

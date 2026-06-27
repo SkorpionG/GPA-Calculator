@@ -1,550 +1,550 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 a {
-  text-decoration: none;
-  color: white;
+    text-decoration: none;
+    color: white;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 
-  i {
-    color: white;
-    transition: all 0.3s ease;
-  }
-
-  &:hover {
     i {
-      color: #ccc;
+        color: white;
+        transition: all 0.3s ease;
     }
-  }
+
+    &:hover {
+        i {
+            color: #ccc;
+        }
+    }
 }
 
 .btn {
-  padding: 0.5rem 0.75rem;
-  border: none;
-  margin: 1rem 0.5rem;
-  transition: background-color 0.3s ease;
-  &:hover {
-    cursor: pointer;
-    background-color: #ccc;
-  }
+    padding: 0.5rem 0.75rem;
+    border: none;
+    margin: 1rem 0.5rem;
+    transition: background-color 0.3s ease;
+    &:hover {
+        cursor: pointer;
+        background-color: #ccc;
+    }
 }
 
 .subject-entry-template {
-  display: none;
-  visibility: hidden;
-  opacity: 0;
+    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
 
 body {
-  background-color: #272727;
-  color: white;
-  font-family: "Baloo 2", cursive;
-
-  section.animation-wrapper {
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    height: 100vh;
-    background-color: white;
-
-    section.animation {
-      margin-top: 10vh;
-      height: 80vh;
-      // border: 5px solid red;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .hero {
-        // border: 5px solid green;
-        width: 100%;
-        height: 0;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-
-    .slider {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: linear-gradient(to right, rgb(144, 144, 144), rgb(0, 0, 0));
-      z-index: -1;
-    }
-  }
-
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 1;
     background-color: #272727;
-    nav {
-      box-shadow: 0 8px 6px -6px black;
-      ul {
-        display: flex;
-        align-items: center;
-        li {
-          padding: 1rem;
-          a {
-            font-size: 1.15rem;
-            transition: all 0.3s ease;
-            &:hover {
-              color: yellow;
-            }
-          }
-        }
+    color: white;
+    font-family: "Baloo 2", cursive;
 
-        li.language-selector {
-          margin-left: auto; // 將語言選擇器推到右側
-          font-family: Arial, Helvetica, sans-serif;
-
-          select {
-            background-color: #333;
-            color: white;
-            border: 1px solid #444;
-            padding: 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 1rem;
-            cursor: pointer;
-            outline: none;
-            transition: all 0.3s ease;
-
-            option {
-              background-color: #333;
-              color: white;
-            }
-
-            &:hover {
-              background-color: #444;
-              border-color: #555;
-            }
-
-            &:focus {
-              border-color: yellow;
-              box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.2);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  main {
-    section.main-content {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      align-items: center;
-      h1 {
-        font-size: 3rem;
-      }
-
-      p {
-        font-size: 1.15rem;
-      }
-
-      div.sort-buttons {
-        .btn {
-          border-radius: 0.25rem;
-          font-size: 1rem;
-
-          .btn-icon {
-            vertical-align: text-bottom;
-            margin-right: 0.25rem;
-            transform: scale(1.25);
-          }
-        }
-      }
-
-      div.subject-container {
-        max-height: calc(var(--entry-height, 50px) * 3); // 預設值 50px
-        overflow-y: auto;
-        // padding-right: 8px; // 為捲軸留空間
-
-        // 美化捲軸
-        &::-webkit-scrollbar {
-          width: 8px;
-        }
-
-        &::-webkit-scrollbar-track {
-          background: #333;
-          border-radius: 4px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          background: #666;
-          border-radius: 4px;
-
-          &:hover {
-            background: #888;
-          }
-        }
-
-        &::-webkit-scrollbar-thumb:active {
-          background: #aaa;
-        }
-
-        input,
-        select {
-          font-size: 1.05rem;
-          padding: 0.5rem;
-          border: 0.25px solid rgb(39, 39, 21);
-          margin: 0.35rem;
-          border-radius: 0.25rem;
-          text-align: center;
-        }
-
-        input.class-credit {
-          width: 80px;
-        }
-
-        button {
-          padding: 0.5rem;
-          border: none;
-          background-color: #272727;
-          i {
-            font-size: 1.25rem;
-            pointer-events: none;
-          }
-        }
-      }
-
-      button.add-button {
-        border: none;
-        cursor: pointer;
-        width: 2.5rem;
-        margin: 3rem 0rem;
-        background-color: #272727;
-        i {
-          font-size: 2.5rem;
-          pointer-events: none;
-        }
-      }
-
-      div.calculation-result {
-        width: 200px;
-        height: 200px;
-        border: 3px solid red;
-        border-radius: 50%;
-        text-align: center;
-
-        animation-name: rainbow-border;
-        animation-duration: 20s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-
-        p#gpa-text {
-          margin-top: 32px;
-        }
-        h2#result-gpa {
-          font-family: "Baloo 2", cursive;
-          font-size: 3.5rem;
-          font-weight: bold;
-        }
-      }
-
-      .toggle-switch {
-        $switchWidth: 30px;
-        $switchHeight: 17px;
-        display: flex;
-        gap: 8px;
-        align-items: center;
+    section.animation-wrapper {
         position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1; /* Ensures the toggle is on top of other elements */
-        font-family: Arial, Helvetica, sans-serif;
+        z-index: 10;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
 
-        /* Style for the toggle label */
-        .toggle-label {
-          opacity: 0;
-          pointer-events: none;
-          font-size: 16px;
-          color: white;
-          -webkit-user-select: none;
-          user-select: none; /* Prevents text selection on double-click */
+        section.animation {
+            margin-top: 10vh;
+            height: 80vh;
+            // border: 5px solid red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .hero {
+                // border: 5px solid green;
+                width: 100%;
+                height: 0;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
         }
 
-        /* Hide the default checkbox */
-        & input[type="checkbox"] {
-          display: none;
-        }
-
-        /* The switch - slider */
-        .switch {
-          position: relative;
-          display: inline-block;
-          width: $switchWidth;
-          height: $switchHeight;
-          background-color: #ccc;
-          border-radius: 34px;
-          cursor: pointer;
-          transition: background-color 0.4s;
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-          &::before {
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-          }
-
-          /* The circle inside the switch */
-          &::before {
-            content: "";
+        .slider {
             position: absolute;
-            left: 2px;
-            top: 2px;
-            width: 13px;
-            height: 13px;
-            background-color: white;
-            border-radius: 50%;
-            transition: transform 0.4s;
-          }
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to right, rgb(144, 144, 144), rgb(0, 0, 0));
+            z-index: -1;
         }
-
-        /* Toggle on state */
-        & input[type="checkbox"]:checked + .switch {
-          background-color: #4caf50;
-        }
-
-        /* Move the circle when toggled on */
-        & input[type="checkbox"]:checked + .switch::before {
-          transform: translateX(13px);
-        }
-      }
     }
-  }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: #272727;
+        nav {
+            box-shadow: 0 8px 6px -6px black;
+            ul {
+                display: flex;
+                align-items: center;
+                li {
+                    padding: 1rem;
+                    a {
+                        font-size: 1.15rem;
+                        transition: all 0.3s ease;
+                        &:hover {
+                            color: yellow;
+                        }
+                    }
+                }
+
+                li.language-selector {
+                    margin-left: auto; // 將語言選擇器推到右側
+                    font-family: Arial, Helvetica, sans-serif;
+
+                    select {
+                        background-color: #333;
+                        color: white;
+                        border: 1px solid #444;
+                        padding: 0.5rem;
+                        border-radius: 0.25rem;
+                        font-size: 1rem;
+                        cursor: pointer;
+                        outline: none;
+                        transition: all 0.3s ease;
+
+                        option {
+                            background-color: #333;
+                            color: white;
+                        }
+
+                        &:hover {
+                            background-color: #444;
+                            border-color: #555;
+                        }
+
+                        &:focus {
+                            border-color: yellow;
+                            box-shadow: 0 0 0 2px rgba(255, 255, 0, 0.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        section.main-content {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.15rem;
+            }
+
+            div.sort-buttons {
+                .btn {
+                    border-radius: 0.25rem;
+                    font-size: 1rem;
+
+                    .btn-icon {
+                        vertical-align: text-bottom;
+                        margin-right: 0.25rem;
+                        transform: scale(1.25);
+                    }
+                }
+            }
+
+            div.subject-container {
+                max-height: calc(var(--entry-height, 50px) * 3); // 預設值 50px
+                overflow-y: auto;
+                // padding-right: 8px; // 為捲軸留空間
+
+                // 美化捲軸
+                &::-webkit-scrollbar {
+                    width: 8px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: #333;
+                    border-radius: 4px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background: #666;
+                    border-radius: 4px;
+
+                    &:hover {
+                        background: #888;
+                    }
+                }
+
+                &::-webkit-scrollbar-thumb:active {
+                    background: #aaa;
+                }
+
+                input,
+                select {
+                    font-size: 1.05rem;
+                    padding: 0.5rem;
+                    border: 0.25px solid rgb(39, 39, 21);
+                    margin: 0.35rem;
+                    border-radius: 0.25rem;
+                    text-align: center;
+                }
+
+                input.class-credit {
+                    width: 80px;
+                }
+
+                button {
+                    padding: 0.5rem;
+                    border: none;
+                    background-color: #272727;
+                    i {
+                        font-size: 1.25rem;
+                        pointer-events: none;
+                    }
+                }
+            }
+
+            button.add-button {
+                border: none;
+                cursor: pointer;
+                width: 2.5rem;
+                margin: 3rem 0rem;
+                background-color: #272727;
+                i {
+                    font-size: 2.5rem;
+                    pointer-events: none;
+                }
+            }
+
+            div.calculation-result {
+                width: 200px;
+                height: 200px;
+                border: 3px solid red;
+                border-radius: 50%;
+                text-align: center;
+
+                animation-name: rainbow-border;
+                animation-duration: 20s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+
+                p#gpa-text {
+                    margin-top: 32px;
+                }
+                h2#result-gpa {
+                    font-family: "Baloo 2", cursive;
+                    font-size: 3.5rem;
+                    font-weight: bold;
+                }
+            }
+
+            .toggle-switch {
+                $switchWidth: 30px;
+                $switchHeight: 17px;
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1; /* Ensures the toggle is on top of other elements */
+                font-family: Arial, Helvetica, sans-serif;
+
+                /* Style for the toggle label */
+                .toggle-label {
+                    opacity: 0;
+                    pointer-events: none;
+                    font-size: 16px;
+                    color: white;
+                    -webkit-user-select: none;
+                    user-select: none; /* Prevents text selection on double-click */
+                }
+
+                /* Hide the default checkbox */
+                & input[type="checkbox"] {
+                    display: none;
+                }
+
+                /* The switch - slider */
+                .switch {
+                    position: relative;
+                    display: inline-block;
+                    width: $switchWidth;
+                    height: $switchHeight;
+                    background-color: #ccc;
+                    border-radius: 34px;
+                    cursor: pointer;
+                    transition: background-color 0.4s;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                    &::before {
+                        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                    }
+
+                    /* The circle inside the switch */
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 2px;
+                        top: 2px;
+                        width: 13px;
+                        height: 13px;
+                        background-color: white;
+                        border-radius: 50%;
+                        transition: transform 0.4s;
+                    }
+                }
+
+                /* Toggle on state */
+                & input[type="checkbox"]:checked + .switch {
+                    background-color: #4caf50;
+                }
+
+                /* Move the circle when toggled on */
+                & input[type="checkbox"]:checked + .switch::before {
+                    transform: translateX(13px);
+                }
+            }
+        }
+    }
 }
 
 .remove {
-  transform: scale(0);
-  transition: all 0.5s ease;
+    transform: scale(0);
+    transition: all 0.5s ease;
 }
 
 @keyframes scale-up {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 @keyframes scale-down {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(0);
-  }
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
 }
 
 @keyframes rainbow-border {
-  0% {
-    border-color: red;
-  }
+    0% {
+        border-color: red;
+    }
 
-  5% {
-    border-color: orangered;
-  }
+    5% {
+        border-color: orangered;
+    }
 
-  10% {
-    border-color: tomato;
-  }
+    10% {
+        border-color: tomato;
+    }
 
-  15% {
-    border-color: darkorange;
-  }
+    15% {
+        border-color: darkorange;
+    }
 
-  20% {
-    border-color: orange;
-  }
+    20% {
+        border-color: orange;
+    }
 
-  25% {
-    border-color: goldenrod;
-  }
+    25% {
+        border-color: goldenrod;
+    }
 
-  30% {
-    border-color: gold;
-  }
+    30% {
+        border-color: gold;
+    }
 
-  35% {
-    border-color: yellow;
-  }
+    35% {
+        border-color: yellow;
+    }
 
-  40% {
-    border-color: yellowgreen;
-  }
+    40% {
+        border-color: yellowgreen;
+    }
 
-  45% {
-    border-color: lawngreen;
-  }
+    45% {
+        border-color: lawngreen;
+    }
 
-  50% {
-    border-color: chartreuse;
-  }
+    50% {
+        border-color: chartreuse;
+    }
 
-  55% {
-    border-color: lime;
-  }
+    55% {
+        border-color: lime;
+    }
 
-  60% {
-    border-color: limegreen;
-  }
+    60% {
+        border-color: limegreen;
+    }
 
-  65% {
-    border-color: aqua;
-  }
+    65% {
+        border-color: aqua;
+    }
 
-  70% {
-    border-color: deepskyblue;
-  }
+    70% {
+        border-color: deepskyblue;
+    }
 
-  75% {
-    border-color: dodgerblue;
-  }
+    75% {
+        border-color: dodgerblue;
+    }
 
-  80% {
-    border-color: blue;
-  }
+    80% {
+        border-color: blue;
+    }
 
-  85% {
-    border-color: blueviolet;
-  }
+    85% {
+        border-color: blueviolet;
+    }
 
-  90% {
-    border-color: mediumorchid;
-  }
+    90% {
+        border-color: mediumorchid;
+    }
 
-  95% {
-    border-color: orchid;
-  }
+    95% {
+        border-color: orchid;
+    }
 
-  100% {
-    border-color: violet;
-  }
+    100% {
+        border-color: violet;
+    }
 }
 
 @media screen and (max-width: 630px) {
-  body {
-    header {
-      nav {
-        ul {
-          flex-direction: column;
-          align-items: center;
-          padding: 1rem;
-          li {
-            padding: 0.5rem;
-          }
+    body {
+        header {
+            nav {
+                ul {
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 1rem;
+                    li {
+                        padding: 0.5rem;
+                    }
 
-          li.language-selector {
-            margin-left: unset;
-          }
+                    li.language-selector {
+                        margin-left: unset;
+                    }
+                }
+            }
         }
-      }
+
+        main {
+            section.main-content {
+                h1 {
+                    margin-top: 1rem;
+                }
+
+                div.sort-buttons {
+                    display: flex;
+                    justify-content: center;
+                    //   flex-direction: column;
+                    //   align-items: center;
+                    gap: 1rem;
+                    margin: 2rem auto;
+
+                    .btn {
+                        margin: 0;
+                    }
+                }
+
+                div.subject-container {
+                    div.subject-entry {
+                        display: grid;
+                        align-items: center;
+                        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+
+                        input.class-credit {
+                            width: unset;
+                        }
+
+                        input.letter-grade {
+                            background-color: white;
+                            color: black;
+                        }
+
+                        button.delete-button {
+                            grid-column: 1 / 3;
+                            width: fit-content;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+
+                button.add-button {
+                    margin: 2rem auto;
+                }
+
+                div.calculation-result {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
     }
-
-    main {
-      section.main-content {
-        h1 {
-          margin-top: 1rem;
-        }
-
-        div.sort-buttons {
-          display: flex;
-          justify-content: center;
-          //   flex-direction: column;
-          //   align-items: center;
-          gap: 1rem;
-          margin: 2rem auto;
-
-          .btn {
-            margin: 0;
-          }
-        }
-
-        div.subject-container {
-          div.subject-entry {
-            display: grid;
-            align-items: center;
-            grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-
-            input.class-credit {
-              width: unset;
-            }
-
-            input.letter-grade {
-              background-color: white;
-              color: black;
-            }
-
-            button.delete-button {
-              grid-column: 1 / 3;
-              width: fit-content;
-              margin: 0 auto;
-            }
-          }
-        }
-
-        button.add-button {
-          margin: 2rem auto;
-        }
-
-        div.calculation-result {
-          margin-bottom: 2rem;
-        }
-      }
-    }
-  }
 }
 
 @media screen and (max-width: 450px) {
-  body {
-    main {
-      section.main-content {
-        display: block;
-        div.subject-container {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-          overflow-y: unset;
-          max-height: unset;
+    body {
+        main {
+            section.main-content {
+                display: block;
+                div.subject-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    overflow-y: unset;
+                    max-height: unset;
 
-          div.subject-entry {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            align-items: stretch;
+                    div.subject-entry {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        align-items: stretch;
 
-            input.letter-grade {
-              background-color: white;
-              color: black;
+                        input.letter-grade {
+                            background-color: white;
+                            color: black;
+                        }
+
+                        button.delete-button {
+                            grid-column: 1 / 3;
+                            width: fit-content;
+                            margin: 0 auto;
+                        }
+                    }
+                }
             }
 
-            button.delete-button {
-              grid-column: 1 / 3;
-              width: fit-content;
-              margin: 0 auto;
+            div.calculation-result {
+                margin: 0 auto 2rem;
             }
-          }
         }
-      }
-
-      div.calculation-result {
-        margin: 0 auto 2rem;
-      }
     }
-  }
 }

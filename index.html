@@ -1,28 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="SkorpionG">
-        <meta name="description" content="A simple website for calculate GPA scores.">
-        <meta name="keywords" content="GPA, Calculator, Grades, Education">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="SkorpionG" />
+        <meta name="description" content="A simple website for calculate GPA scores." />
+        <meta name="keywords" content="GPA, Calculator, Grades, Education" />
         <title id="website-title">成績計算網站</title>
-        <link rel="icon" type="image/svg+xml" href="./public/icons/mortarboard.svg">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        <link rel="icon" type="image/svg+xml" href="./public/icons/mortarboard.svg" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
             integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./src/styles/style.css">
-        <link rel="stylesheet" href="./src/styles/grades.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./src/styles/style.css" />
+        <link rel="stylesheet" href="./src/styles/grades.css" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
             integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
             integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
     </head>
 
     <body>
@@ -32,9 +44,7 @@
                     <img src="./public/assets/math.jpg" alt="opening animation image" />
                 </div>
             </section>
-            <div class="slider">
-
-            </div>
+            <div class="slider"></div>
         </section>
 
         <header>
@@ -58,21 +68,41 @@
             <section class="main-content">
                 <h1 id="main-heading">Grade Input Form</h1>
                 <div class="sort-buttons">
-                    <button type="button" class="btn sort-descending"><img alt="sort icon" class="btn-icon"
-                            src="./public/icons/sort-down.svg" /><span id="sort-button-desc-text">降序排序</span></button>
-                    <button type="button" class="btn sort-ascending"><img alt="sort icon" class="btn-icon"
-                            src="./public/icons/sort-up.svg" /><span
-                            id="sort-button-asc-text">升序排序</span></button>
+                    <button type="button" class="btn sort-descending">
+                        <img
+                            alt="sort icon"
+                            class="btn-icon"
+                            src="./public/icons/sort-down.svg"
+                        /><span id="sort-button-desc-text">降序排序</span>
+                    </button>
+                    <button type="button" class="btn sort-ascending">
+                        <img
+                            alt="sort icon"
+                            class="btn-icon"
+                            src="./public/icons/sort-up.svg"
+                        /><span id="sort-button-asc-text">升序排序</span>
+                    </button>
                 </div>
 
                 <div class="subject-container">
                     <!-- subject entry template -->
                     <div class="subject-entry-template">
-                        <input type="text" placeholder="Class Category" class="class-type" list="class-options" />
+                        <input
+                            type="text"
+                            placeholder="Class Category"
+                            class="class-type"
+                            list="class-options"
+                        />
 
                         <input type="number" placeholder="Class Number" class="class-number" />
 
-                        <input type="number" placeholder="Credit" min="0" max="6" class="class-credit" />
+                        <input
+                            type="number"
+                            placeholder="Credit"
+                            min="0"
+                            max="6"
+                            class="class-credit"
+                        />
 
                         <select title="Letter Grade" name="letter-grade" class="letter-grade">
                             <option selected disabled value=""></option>
@@ -108,8 +138,10 @@
 
                 <!-- Toggle Switch Container -->
                 <div class="toggle-switch">
-                    <span class="toggle-label"><span id="toggle-label-status">Hide </span><span
-                            id="toggle-label-text">opening animation</span></span>
+                    <span class="toggle-label"
+                        ><span id="toggle-label-status">Hide </span
+                        ><span id="toggle-label-text">opening animation</span></span
+                    >
                     <input title="Toggle Opening Animation" type="checkbox" id="animation-toggle" />
                     <label for="animation-toggle" class="switch"></label>
                 </div>
@@ -124,5 +156,4 @@
     <script src="./src/script.js" type="module" defer></script>
     <script src="./src/animation-preference-toggle.js" type="module" defer></script>
     <script src="./src/app.js" type="module" defer></script>
-
 </html>

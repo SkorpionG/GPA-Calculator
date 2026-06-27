@@ -1,6 +1,17 @@
 {
-  "snyk.advanced.autoSelectOrganization": false,
-  "specstory.cloudSync.enabled": "never",
-  "specstory.autoSave.enabled": false,
-  "specstory.helpUsImprove": false
+    "snyk.advanced.autoSelectOrganization": false,
+    "specstory.cloudSync.enabled": "never",
+    "specstory.autoSave.enabled": false,
+    "specstory.helpUsImprove": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
