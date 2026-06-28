@@ -59,14 +59,6 @@ export const displayText = {
             "zh-tw": "成績分析",
         },
     },
-    termsOfServiceLink: {
-        id: "terms-of-service-link",
-        target: "innerHTML",
-        text: {
-            en: "Terms of Service",
-            "zh-tw": "服務條款",
-        },
-    },
     mainHeading: {
         id: "main-heading",
         target: "innerHTML",
@@ -193,10 +185,8 @@ export function updateDisplayedText(targetLang) {
     // 遍歷所有需要更新的文字
     Object.values(displayText).forEach((config) => {
         const element = document.getElementById(config.id);
-        if (!element) {
-            console.warn(`找不到元素: ${config.id}`);
-            return;
-        }
+        // Element may not exist on this page (e.g. calculator elements on Home/About)
+        if (!element) return;
 
         // 根據配置更新元素的目標屬性
         const targetText = config.text[targetLang];

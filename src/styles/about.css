@@ -1,0 +1,221 @@
+/* ============================================
+   About Page Styles
+   ============================================ */
+
+.about-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+}
+
+/* About Hero */
+.about-hero {
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    border-bottom: 1px solid #3d3d3d;
+    margin-bottom: 3rem;
+}
+
+.about-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #ffff00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+}
+
+.about-hero p {
+    font-size: 1.05rem;
+    color: #aaa;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* About Sections */
+.about-section {
+    margin-bottom: 3.5rem;
+    animation: fade-in-up 0.6s ease-out both;
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-section h2 {
+    font-size: 1.6rem;
+    color: #ffd700;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #3d3d3d;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.about-section h2 i {
+    font-size: 1.1rem;
+    color: #ffd700;
+}
+
+.about-section > p {
+    color: #ccc;
+    line-height: 1.9;
+    font-size: 1rem;
+}
+
+.about-section code {
+    background-color: #333;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+    color: #ffd700;
+}
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.6rem;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #ccc;
+    padding: 0.5rem 0.75rem;
+    background-color: #2e2e2e;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    border: 1px solid #3a3a3a;
+    transition: border-color 0.3s ease;
+}
+
+.feature-list li:hover {
+    border-color: #555;
+}
+
+.feature-list li i {
+    color: #4caf50;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* Tech Stack */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background-color: #2e2e2e;
+    border: 1px solid #444;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    color: #ddd;
+    cursor: default;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.tech-badge:hover {
+    background-color: #383838;
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+/* Developer Card */
+.developer-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: #2e2e2e;
+    border-radius: 1rem;
+    padding: 2rem;
+    border: 1px solid #3d3d3d;
+    transition: border-color 0.3s ease;
+}
+
+.developer-card:hover {
+    border-color: #555;
+}
+
+.developer-avatar {
+    font-size: 4.5rem;
+    color: #666;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.developer-info h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.developer-info p {
+    color: #aaa;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.github-link:hover {
+    color: #ffd700;
+    opacity: 0.75;
+}
+
+.github-link i {
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 630px) {
+    .about-hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .developer-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .github-link {
+        justify-content: center;
+    }
+
+    .feature-list {
+        grid-template-columns: 1fr;
+    }
+}

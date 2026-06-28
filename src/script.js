@@ -1,6 +1,5 @@
 import { loadClassOptions, CourseManager, appendSubjectEntry, updateGPA } from "./utils.js";
 import { classes } from "./data.js";
-import { loadLanguagePreference, updateDisplayedText } from "./languages.js";
 
 loadClassOptions(classes);
 
@@ -31,7 +30,3 @@ const addButton = document.querySelector(".add-button");
 addButton.addEventListener("click", () => {
     appendSubjectEntry();
 });
-
-const savedLanguageCode = loadLanguagePreference();
-updateDisplayedText(savedLanguageCode);
-document.querySelector("#language-select").value = savedLanguageCode;

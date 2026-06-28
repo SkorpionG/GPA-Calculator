@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="SkorpionG" />
+        <meta
+            name="description"
+            content="About the GPA Calculator project — a bilingual, client-side GPA calculation tool built with modern web technologies."
+        />
+        <meta name="keywords" content="GPA, Calculator, About, Web Components, Vanilla JS" />
+        <title id="website-title">GPA Calculator - About</title>
+        <link rel="icon" type="image/svg+xml" href="./public/icons/mortarboard.svg" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./src/styles/style.css" />
+        <link rel="stylesheet" href="./src/styles/about.css" />
+    </head>
+
+    <body>
+        <site-header></site-header>
+
+        <main class="about-page">
+            <section class="about-hero">
+                <h1>About GPA Calculator</h1>
+                <p>
+                    A simple, fast, and bilingual GPA calculation tool built with modern,
+                    standards-based web technologies — no frameworks, no dependencies, just the web
+                    platform.
+                </p>
+            </section>
+
+            <div class="about-content">
+                <section class="about-section">
+                    <h2><i class="fas fa-circle-info"></i> Project Overview</h2>
+                    <p>
+                        GPA Calculator is a client-side web application that helps students
+                        calculate their semester GPA using a standard 4.3-point scale. All course
+                        data is stored locally in your browser via <code>localStorage</code>,
+                        ensuring your privacy with no server calls or accounts required.
+                    </p>
+                </section>
+
+                <section class="about-section">
+                    <h2><i class="fas fa-star"></i> Features</h2>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Real-time GPA calculation</li>
+                        <li><i class="fas fa-check"></i> 4.3-point GPA scale (A+ to F)</li>
+                        <li><i class="fas fa-check"></i> Sort subjects by grade</li>
+                        <li><i class="fas fa-check"></i> Persistent local storage</li>
+                        <li><i class="fas fa-check"></i> Bilingual: English &amp; 繁體中文</li>
+                        <li><i class="fas fa-check"></i> Animated intro with toggle</li>
+                        <li><i class="fas fa-check"></i> Shared header via Web Components</li>
+                        <li><i class="fas fa-check"></i> Responsive design</li>
+                    </ul>
+                </section>
+
+                <section class="about-section">
+                    <h2><i class="fas fa-layer-group"></i> Tech Stack</h2>
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML5</span>
+                        <span class="tech-badge">CSS3 / SCSS</span>
+                        <span class="tech-badge">Vanilla JavaScript</span>
+                        <span class="tech-badge">ES Modules</span>
+                        <span class="tech-badge">Web Components</span>
+                        <span class="tech-badge">GSAP</span>
+                        <span class="tech-badge">Font Awesome</span>
+                        <span class="tech-badge">ESLint</span>
+                        <span class="tech-badge">Prettier</span>
+                        <span class="tech-badge">Husky</span>
+                        <span class="tech-badge">lint-staged</span>
+                    </div>
+                </section>
+
+                <section class="about-section">
+                    <h2><i class="fas fa-user"></i> Developer</h2>
+                    <div class="developer-card">
+                        <div class="developer-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="developer-info">
+                            <h3>SkorpionG</h3>
+                            <p>
+                                A passionate web developer focused on building clean, modern, and
+                                functional web applications using standards-based technologies.
+                            </p>
+                            <a
+                                href="https://github.com/SkorpionG"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="github-link"
+                            >
+                                <i class="fab fa-github"></i>
+                                GitHub Profile
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <script src="./src/components/site-header.js" type="module" defer></script>
+    </body>
+</html>

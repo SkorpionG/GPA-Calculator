@@ -1,5 +1,4 @@
 import { gradeToCredit } from "./utils.js";
-import { updateDisplayedText } from "./languages.js";
 
 // 讓整個網站的ENTER KEY都無法使用
 window.addEventListener("keypress", (e) => {
@@ -15,10 +14,6 @@ document.querySelectorAll("button").forEach((button) => {
     });
 });
 
-document.querySelector("#language-select").addEventListener("change", (e) => {
-    updateDisplayedText(e.target.value);
-});
-
 // 排序演算法
 const sortBtnDesc = document.querySelector(".sort-descending");
 const sortBtnAsc = document.querySelector(".sort-ascending");
@@ -30,12 +25,10 @@ sortBtnAsc.addEventListener("click", () => {
 });
 
 function handleSorting(order) {
-    const gradeInputs = document.querySelectorAll(".subject-entry");
-    if (gradeInputs.length === 0) {
-        // alert("請先輸入成績");
+    const gradeItems = Array.from(document.querySelectorAll(".subject-entry"));
+    if (gradeItems.length === 0) {
         return;
     }
-    const gradeItems = Array.from(document.querySelectorAll(".subject-entry"));
     const sortItems = gradeItems.filter((item) => {
         return item.querySelector(".letter-grade").value !== "";
     });

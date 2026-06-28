@@ -41,6 +41,10 @@ button:hover i {
     opacity: 0;
 }
 
+site-header {
+    display: block;
+}
+
 body {
     background-color: #272727;
     color: white;
@@ -101,6 +105,12 @@ body header nav ul li a {
 }
 body header nav ul li a:hover {
     color: yellow;
+}
+body header nav ul li a.active {
+    color: #ffd700;
+    font-weight: 700;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 2px;
 }
 body header nav ul li.language-selector {
     margin-left: auto;
@@ -233,10 +243,6 @@ body main section.main-content .toggle-switch {
     z-index: 1; /* Ensures the toggle is on top of other elements */
     font-family: Arial, Helvetica, sans-serif;
     /* Style for the toggle label */
-    /* Hide the default checkbox */
-    /* The switch - slider */
-    /* Toggle on state */
-    /* Move the circle when toggled on */
 }
 body main section.main-content .toggle-switch .toggle-label {
     opacity: 0;
@@ -247,8 +253,14 @@ body main section.main-content .toggle-switch .toggle-label {
     -moz-user-select: none;
     user-select: none; /* Prevents text selection on double-click */
 }
+body main section.main-content .toggle-switch {
+    /* Hide the default checkbox */
+}
 body main section.main-content .toggle-switch input[type="checkbox"] {
     display: none;
+}
+body main section.main-content .toggle-switch {
+    /* The switch - slider */
 }
 body main section.main-content .toggle-switch .switch {
     position: relative;
@@ -260,10 +272,12 @@ body main section.main-content .toggle-switch .switch {
     cursor: pointer;
     transition: background-color 0.4s;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    /* The circle inside the switch */
 }
 body main section.main-content .toggle-switch .switch::before {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+body main section.main-content .toggle-switch .switch {
+    /* The circle inside the switch */
 }
 body main section.main-content .toggle-switch .switch::before {
     content: "";
@@ -276,8 +290,14 @@ body main section.main-content .toggle-switch .switch::before {
     border-radius: 50%;
     transition: transform 0.4s;
 }
+body main section.main-content .toggle-switch {
+    /* Toggle on state */
+}
 body main section.main-content .toggle-switch input[type="checkbox"]:checked + .switch {
     background-color: #4caf50;
+}
+body main section.main-content .toggle-switch {
+    /* Move the circle when toggled on */
 }
 body main section.main-content .toggle-switch input[type="checkbox"]:checked + .switch::before {
     transform: translateX(13px);
