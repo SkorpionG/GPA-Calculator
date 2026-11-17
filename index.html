@@ -1,104 +1,127 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="SkorpionG" />
-        <meta
-            name="description"
-            content="GPA Calculator — A fast, bilingual tool to calculate your semester GPA with ease."
-        />
-        <meta name="keywords" content="GPA, Calculator, Grades, Education" />
+  <head>
+    <!-- Primary Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GPA Calculator — A fast, bilingual tool to calculate your semester GPA with ease."
+    />
+    <meta name="author" content="SkorpionG" />
+    <meta name="creator" content="SkorpionG" />
+    <meta name="publisher" content="SkorpionG" />
+    <meta name="application-name" content="GPA Calculator" />
+    <meta name="keywords" content="GPA, Calculator, Grades, Education" />
 
-        <!-- Search Engine Optimization (SEO) -->
-        <!-- <meta name="robots" content="index, follow" /> -->
-        <link rel="canonical" href="https://skorpiong.github.io/GPA-Calculator/" />
+    <!-- Search Engine Indexing -->
+    <meta name="robots" content="index, follow" />
+    <!-- <meta name="robots" content="noindex, nofollow" /> -->
+    <link rel="canonical" href="https://skorpiong.github.io/GPA-Calculator/" />
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://skorpiong.github.io/GPA-Calculator/" />
-        <meta property="og:title" content="GPA Calculator - Home" />
-        <meta
-            property="og:description"
-            content="GPA Calculator — A fast, bilingual tool to calculate your semester GPA with ease."
-        />
-        <meta property="og:image" content="./public/og-image.png" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skorpiong.github.io/GPA-Calculator/" />
+    <meta property="og:title" content="GPA Calculator - Home" />
+    <meta
+      property="og:description"
+      content="GPA Calculator — A fast, bilingual tool to calculate your semester GPA with ease."
+    />
+    <meta
+      property="og:image"
+      content="https://skorpiong.github.io/GPA-Calculator/public/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="GPA Calculator — Bilingual and Real-time" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="GPA Calculator" />
 
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://skorpiong.github.io/GPA-Calculator/" />
-        <meta property="twitter:title" content="GPA Calculator - Home" />
-        <meta
-            property="twitter:description"
-            content="GPA Calculator — A fast, bilingual tool to calculate your semester GPA with ease."
-        />
-        <meta property="twitter:image" content="./public/twitter-image.png" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://skorpiong.github.io/GPA-Calculator/" />
+    <meta name="twitter:title" content="GPA Calculator - Home" />
+    <meta
+      name="twitter:description"
+      content="GPA Calculator — A fast, bilingual tool to calculate your semester GPA with ease."
+    />
+    <meta
+      name="twitter:image"
+      content="https://skorpiong.github.io/GPA-Calculator/public/twitter-image.png"
+    />
+    <meta name="twitter:image:alt" content="GPA Calculator — Bilingual and Real-time" />
 
-        <title id="website-title">GPA Calculator - Home</title>
-        <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./src/styles/style.css" />
-        <link rel="stylesheet" href="./src/styles/home.css" />
-    </head>
+    <!-- Favicons and App Icons -->
+    <link rel="icon" href="./public/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="./public/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./public/apple-touch-icon.png" />
+    <link rel="manifest" href="./public/site.webmanifest" />
 
-    <body>
-        <site-header></site-header>
+    <title id="website-title">GPA Calculator - Home</title>
 
-        <main class="home-page">
-            <section class="home-hero">
-                <div class="home-hero-content">
-                    <div class="home-hero-icon">
-                        <img src="./public/icons/mortarboard-fill.svg" alt="GPA Calculator Logo" />
-                    </div>
-                    <h1>GPA Calculator</h1>
-                    <p>
-                        Calculate your semester GPA quickly and accurately with support for English
-                        and 繁體中文.
-                    </p>
-                    <a href="./grade-calculator.html" class="cta-button">
-                        <i class="fas fa-calculator"></i>
-                        Start Calculating
-                    </a>
-                </div>
-            </section>
+    <!-- Stylesheets & Scripts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="stylesheet" href="./src/styles/home.css" />
+    <script type="module" src="./src/metadata-sync.js"></script>
+  </head>
 
-            <section class="features">
-                <div class="feature-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Instant Results</h3>
-                    <p>Your GPA updates in real-time as you enter your grades and credits.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-cloud-arrow-up"></i>
-                    <h3>Auto-Save</h3>
-                    <p>Your courses are automatically saved in your browser — no account needed.</p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-language"></i>
-                    <h3>Bilingual</h3>
-                    <p>
-                        Fully supports both English and Traditional Chinese (繁體中文) interfaces.
-                    </p>
-                </div>
-                <div class="feature-card">
-                    <i class="fas fa-arrow-up-wide-short"></i>
-                    <h3>Smart Sorting</h3>
-                    <p>Sort your subjects by grade in ascending or descending order instantly.</p>
-                </div>
-            </section>
-        </main>
-        <script src="./src/components/site-header.js" type="module" defer></script>
-    </body>
+  <body>
+    <site-header></site-header>
+
+    <main class="home-page">
+      <section class="home-hero">
+        <div class="home-hero-content">
+          <div class="home-hero-icon">
+            <img src="./public/icons/mortarboard-fill.svg" alt="GPA Calculator Logo" />
+          </div>
+          <h1>GPA Calculator</h1>
+          <p>
+            Calculate your semester GPA quickly and accurately with support for English and
+            繁體中文.
+          </p>
+          <a href="./grade-calculator.html" class="cta-button">
+            <i class="fas fa-calculator"></i>
+            Start Calculating
+          </a>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="feature-card">
+          <i class="fas fa-bolt"></i>
+          <h3>Instant Results</h3>
+          <p>Your GPA updates in real-time as you enter your grades and credits.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-cloud-arrow-up"></i>
+          <h3>Auto-Save</h3>
+          <p>Your courses are automatically saved in your browser — no account needed.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-language"></i>
+          <h3>Bilingual</h3>
+          <p>Fully supports both English and Traditional Chinese (繁體中文) interfaces.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-arrow-up-wide-short"></i>
+          <h3>Smart Sorting</h3>
+          <p>Sort your subjects by grade in ascending or descending order instantly.</p>
+        </div>
+      </section>
+    </main>
+    <script src="./src/components/site-header.js" type="module" defer></script>
+  </body>
 </html>

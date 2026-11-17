@@ -1,10 +1,10 @@
 import { loadLanguagePreference, updateDisplayedText } from "../languages.js";
 
 class SiteHeader extends HTMLElement {
-    connectedCallback() {
-        const filename = window.location.pathname.split("/").pop() || "index.html";
+  connectedCallback() {
+    const filename = window.location.pathname.split("/").pop() || "index.html";
 
-        this.innerHTML = `
+    this.innerHTML = `
             <header>
                 <nav>
                     <ul>
@@ -28,17 +28,17 @@ class SiteHeader extends HTMLElement {
             </header>
         `;
 
-        const savedLang = loadLanguagePreference();
-        const langSelect = this.querySelector("#language-select");
-        if (langSelect) {
-            langSelect.value = savedLang;
-            langSelect.addEventListener("change", (e) => {
-                updateDisplayedText(e.target.value);
-            });
-        }
-
-        updateDisplayedText(savedLang);
+    const savedLang = loadLanguagePreference();
+    const langSelect = this.querySelector("#language-select");
+    if (langSelect) {
+      langSelect.value = savedLang;
+      langSelect.addEventListener("change", (e) => {
+        updateDisplayedText(e.target.value);
+      });
     }
+
+    updateDisplayedText(savedLang);
+  }
 }
 
 customElements.define("site-header", SiteHeader);

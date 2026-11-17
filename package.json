@@ -1,35 +1,40 @@
 {
-    "name": "gpa-calculator",
-    "version": "1.0.0",
-    "description": "A simple GPA calculator for calculate your high school and college grade",
-    "private": true,
-    "scripts": {
-        "lint": "eslint 'src/**/*.js' -c eslint.config.mjs",
-        "lint:fix": "eslint 'src/**/*.js' -c eslint.config.mjs --fix",
-        "format": "prettier --write .",
-        "format:check": "prettier --check .",
-        "prepare": "husky",
-        "husky:init": "chmod +x .husky/pre-commit"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/SkorpionG/GPA-Calculator.git"
-    },
-    "keywords": [],
-    "author": "SkorpionG",
-    "type": "commonjs",
-    "bugs": {
-        "url": "https://github.com/SkorpionG/GPA-Calculator/issues"
-    },
-    "homepage": "https://github.com/SkorpionG/GPA-Calculator#readme",
-    "devDependencies": {
-        "@eslint/js": "^10.0.1",
-        "eslint": "^10.15.0",
-        "eslint-config-prettier": "^10.1.8",
-        "eslint-plugin-prettier": "^5.5.7",
-        "globals": "^17.14.0",
-        "husky": "^9.1.7",
-        "lint-staged": "^17.6.1",
-        "prettier": "^3.10.1"
-    }
+  "name": "gpa-calculator",
+  "version": "1.0.0",
+  "description": "A bilingual client-side GPA calculator for calculating semester GPA scores.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "eslint \"src/**/*.js\" --fix",
+    "prepare": "husky",
+    "husky:init": "chmod +x .husky/pre-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkorpionG/GPA-Calculator.git"
+  },
+  "keywords": [
+    "gpa",
+    "calculator",
+    "education",
+    "vanilla-javascript"
+  ],
+  "author": "SkorpionG",
+  "bugs": {
+    "url": "https://github.com/SkorpionG/GPA-Calculator/issues"
+  },
+  "homepage": "https://github.com/SkorpionG/GPA-Calculator#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.7",
+    "globals": "^17.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.1",
+    "prettier": "^3.10.1"
+  }
 }
