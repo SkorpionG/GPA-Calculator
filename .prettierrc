@@ -4,5 +4,9 @@
     "singleQuote": false,
     "tabWidth": 4,
     "useTabs": false,
-    "printWidth": 100
+    "printWidth": 100,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "bracketSameLine": false,
+    "endOfLine": "lf"
 }

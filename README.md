@@ -2,8 +2,6 @@
 
 A responsive, feature-rich web application for calculating Semester GPA scores using modern ES modules, clean CSS, and interactive UI animations. The application is built using standard vanilla web technologies and supports both **English** and **繁體中文** (Traditional Chinese).
 
----
-
 ## 🌟 Key Features
 
 - **Interactive GPA Calculation**: Compute your weighted GPA instantly based on class credits and letter grades.
@@ -13,8 +11,6 @@ A responsive, feature-rich web application for calculating Semester GPA scores u
 - **Bilingual Interface**: Seamless translation toggle between English and 繁體中文.
 - **Smooth Animations**: Sleek opening animations powered by GreenSock GSAP (with a toggle switch to remember your preference).
 - **Format-on-Save & Quality Checks**: Configured with ESLint and Prettier for clean, standardized, error-free code.
-
----
 
 ## 📈 GPA Grading Scale (4.3 Scale)
 

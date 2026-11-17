@@ -1,5 +1,9 @@
 node_modules/
 public/
 .git/
+.husky/
+.specstory/
+package-lock.json
+*.map
 *.jpg
 *.svg
